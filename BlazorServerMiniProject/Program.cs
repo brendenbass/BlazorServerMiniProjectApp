@@ -2,7 +2,13 @@ using BlazorServerMiniProject.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(
+    new WebApplicationOptions()
+    {
+        Args = args,
+        ContentRootPath = "/app/out",
+        WebRootPath = "wwwroot",
+    });
 
 // Add services to the container.
 builder.Services.AddRazorPages();
